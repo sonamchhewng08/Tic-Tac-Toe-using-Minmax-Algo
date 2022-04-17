@@ -1,0 +1,168 @@
+body{
+    margin:0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    max-height: auto;
+}
+.Main{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    max-height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-image: url(https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=829&q=80);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .left{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h2{
+            margin: 20px;
+            color:#000000;
+            margin-bottom: 100px;
+            font-size: 4rem;
+            font-family:serif;
+            text-align: center;
+        }
+        .middle_text{
+            margin: 20px;
+            font-size: 5rem;
+            color: #ab0000;
+            text-align: center;
+            font-weight: bolder;
+        }
+        .left_inside{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            span{
+                font-size: 1.5rem;
+                color:black;
+            }
+            div{
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+            .button ,.select{ 
+                font-size: 1.2rem;
+                margin: 10px;
+                width: 7rem;
+                height: 3rem;
+                border-radius: 5px;
+                color:white;
+                background-color: #1b2b40;
+                border: none;
+                outline: none;
+
+            }
+        }
+    }
+    .right{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .Square{
+            margin: 5px;
+            border-radius: 10px;
+            width: 500px;
+            height: 500px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .middle_text{
+                position:absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 4rem;
+                z-index: 999;
+                color: rgb(255, 58, 58);
+            }
+            .row{
+                z-index: 9;
+                width: 100%;
+                height: 32%;
+                display: flex;
+                justify-content: space-between;
+                .box{
+                    border-radius: 10px;
+                    background-color: black;
+                    box-shadow: rgba(255, 255, 255, 0.411) 0px 4px 12px;
+                    width: 32%;
+                    height: 100%;
+                }
+                .ai{
+                    display: block;
+                    text-align: center;
+                    margin: auto 0;
+                }
+                .human{
+                    display: block;
+                    text-align: center;
+                    margin: auto 0;
+                }
+                .human::before{
+                    font-size: 7rem;
+                    line-height: 10rem;
+                    color: rgb(92, 255, 105);
+                    content: "O";
+                }
+                .ai::before{
+                    font-size: 7rem;
+                    line-height: 10rem;
+                    color:rgb(255, 82, 82);
+                    content: "X";
+                }
+            }
+        }
+    } 
+}
+@media screen and (max-width:1054px) {
+    .Main{
+        flex-direction: column;
+        .left{
+            width: 100%;
+            height: 20%;
+            margin:10px 0;
+            h2{
+                margin: 5px;
+            }
+            .middle_text{
+                margin: 0;
+            }
+        }
+        .right{
+            width: 100%;
+            height: 80%;
+        }
+    }
+}
+@media screen and (max-width:520px){
+    .Main{
+        .right{
+            .Square{
+                .row{
+                    .ai::before{
+                        font-size: 5rem;
+                    }
+                    .human::before{
+                        font-size: 5rem;
+                    }
+                }
+            }
+        }
+    }
+}
